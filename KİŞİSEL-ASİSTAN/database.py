@@ -7,8 +7,8 @@ def get_db_connection():
             'DRIVER={SQL Server};'        # SQL Server sürücüsü
             'SERVER=DESKTOP-BLTT0DI;'       # Sunucu adı/IP adresi
             'DATABASE=PersonFaceRecognitionDB;'  # Veritabanı adı
-            'UID=Sa;'          # Kullanıcı adı
-            'PWD=ilhan25;'                  # Şifre
+            'UID=;'          # Kullanıcı adı
+            'PWD=;'                  # Şifre (sql serverdaki kullancı adı ve şifre bölümü) ben sql server kullandım kullanımı daha rahat bence.
         )
         print("Veritabanına başarıyla bağlandı.")
         return connection
