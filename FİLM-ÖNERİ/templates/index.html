@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Öneri Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Hangi tür film izlemek istersin?</h1>
+    <form action="/recommend" method="POST">
+        <select name="genre" required>
+            <option value="">Bir tür seçin</option>
+            <option value="action">Aksiyon</option>
+            <option value="adventure">Macera</option>
+            <option value="drama">Dram</option>
+            <option value="comedy">Komedi</option>
+            <option value="romance">Romantik</option>
+            <option value="horror">Korku</option>
+            <option value="science fiction">Bilim Kurgu</option>
+            <option value="fantasy">Fantastik</option>
+            <option value="thriller">Gerilim</option>
+            <option value="animation">Animasyon</option>
+            <option value="documentary">Belgesel</option>
+            <option value="musical">Müzikal</option>
+            <option value="history">Tarihi</option>
+            <option value="war">Savaş</option>
+            <option value="crime">Suç</option>
+        </select>
+        <button type="submit">Öneri Al</button>
+    </form>
+</body>
+</html>

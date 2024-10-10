@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yüz Tanıma Ve Duygu Tespiti Uygulaması</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f0f4f8;
+        }
+        #video-container {
+            width: 75%;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        #register-container {
+            width: 20%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 20px;
+            background-color: #fff;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #444;
+        }
+        button {
+            margin-top: 10px;
+            padding: 15px;
+            width: 100%;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        p {
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <h1>Yüz Tanıma Ve Duygu Tespiti Uygulaması</h1>
+        <h2>Video Akışı</h2>
+        <img src="{{ url_for('video_feed') }}" alt="Video Akışı">
+    </div>
+    
+    <div id="register-container">
+        <h2>Kayıt Ol</h2>
+        <input type="text" id="username" placeholder="İsminizi girin">
+        <button onclick="register()">Kayıt Ol</button>
+      
+        <p id="registration-status"></p>
+    </div>
+
+    <script>
+        // Yeni kullanıcıyı kaydetmek için register fonksiyonu
+        function register() {
+            const username = document.getElementById("username").value;
+
+            if (!username) {
+                document.getElementById("registration-status").innerText = "Lütfen isminizi girin.";
+                return;
+            }
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: username }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("registration-status").innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+                document.getElementById("registration-status").innerText = "Kayıt işlemi sırasında bir hata oluştu.";
+            });
+        }
+
+        function checkRecognizedUser() {
+            fetch('/check_user')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.recognized) {
+                        window.location.href = "/assistant";
+                    }
+                });
+        }
+
+        // Her 2 saniyede bir kullanıcı kontrolü yapar
+        setInterval(checkRecognizedUser, 9000);
+    </script>
+</body>
+</html>

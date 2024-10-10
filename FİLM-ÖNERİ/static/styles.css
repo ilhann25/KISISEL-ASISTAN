@@ -1,0 +1,58 @@
+body {
+    background-image: url('../static/sehir.jpg'); /* Arka plan resmi */
+    background-size: cover; /* Resmin boyutunu kaplayacak şekilde ayarla */
+    background-position: center; /* Resmi ortala */
+    background-repeat: no-repeat; /* Resmin tekrar etmesini engelle */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+    margin: 0;
+    padding: 20px;
+    color: #fff; /* Yazı rengi beyaz */
+}
+
+h1 {
+    font-size: 2.5em; /* Başlık boyutu */
+    color: white; /* Başlık rengi */
+   
+            font-weight: bold; 
+            background-color: #e87720; /* Turuncu arka plan rengi */
+            padding: 15px 32px;
+            border-radius: 10px;
+            display: block; /* Block display eklendi */
+            width: fit-content; /* Başlık genişliği içeriğe göre ayarlanacak */
+            margin: 0 auto 30px auto; /* Ortalanma ve alt boşluk ayarlandı */
+        }
+
+
+form {
+    margin-bottom: 20px; /* Formun altındaki boşluk */
+}
+
+select, button {
+    font-size: 1.2em; /* Seçim ve buton yazı boyutu */
+    padding: 10px; /* Seçim ve buton için iç boşluk */
+}
+
+ul {
+    list-style-type: none; /* Liste noktalarını kaldır */
+    padding: 0; /* İçerik dolgusunu kaldır */
+}
+
+li {
+    margin: 10px 0; /* Her film için üst ve alt boşluk */
+    display: flex; /* Flexbox ile yerleşimi ayarla */
+    align-items: center; /* Merkezde hizala */
+}
+
+img {
+    margin-right: 15px; /* Afiş ile film ismi arasında boşluk */
+}
+
+
+a {
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    color: #0ff152; /* Bağlantı rengi */
+}
+
+a:hover {
+    text-decoration: underline; /* Üzerine gelince alt çizgi ekle */
+}

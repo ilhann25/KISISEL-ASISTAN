@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Asistan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-image: url('/static/images/background.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            color: red;
+            font-weight: bold;
+            color: white; /* Yazı rengi beyaz */
+            font-weight: bold; 
+            background-color: #fa1e0a; /* Turuncu arka plan rengi */
+            padding: 15px 32px;
+            border-radius: 10px;
+            display: block; /* Block display eklendi */
+            width: fit-content; /* Başlık genişliği içeriğe göre ayarlanacak */
+            margin: 0 auto 30px auto;
+        }
+
+        h2 {
+            font-size: 2.0rem;
+            margin-bottom: 30px;
+            color: white; /* Yazı rengi beyaz */
+            font-weight: bold; 
+            background-color: #e87720; /* Turuncu arka plan rengi */
+            padding: 15px 32px;
+            border-radius: 10px;
+            display: block; /* Block display eklendi */
+            width: fit-content; /* Başlık genişliği içeriğe göre ayarlanacak */
+            margin: 0 auto 30px auto; /* Ortalanma ve alt boşluk ayarlandı */
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: white; 
+            font-weight: bold; 
+            padding: 10px 23px;
+            border-radius: 7px;
+            display: block; /* Block display eklendi */
+            width: fit-content; /* Başlık genişliği içeriğe göre ayarlanacak */
+            margin: 0 auto 20px auto;
+        }
+
+        .emotion-text {
+            color: whitesmoke; 
+            font-weight: bold; 
+            background-color:blue;
+            padding: 10px 23px;
+            border-radius: 7px;
+            display: block; /* Block display eklendi */
+            width: fit-content; /* Başlık genişliği içeriğe göre ayarlanacak */
+            margin: 0 auto 20px auto;
+        
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Tüm yazıların kalın harfle yazılmış ve kırmızıya dönüştürülmesi */
+        * {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kişisel Asistana Hoşgeldiniz, {{ user }}!</h1>
+    {% if emotion %}
+        <p class="emotion-text">Şu anda {{ emotion }} görünüyorsun.</p>
+        {% if emotion == 'sad' %}
+            <p class="emotion-text">Üzgün görünüyorsun. Umarım daha iyi hissedersin!</p>
+        {% elif emotion == 'happy' %}
+            <p class="emotion-text">Mutlu görünüyorsun! Harika bir gün olsun!</p>
+        {% else %}
+            <p class="emotion-text">Duygu durumun: {{ emotion }}</p>
+        {% endif %}
+    {% endif %}
+
+    <h2>Ne Yapmak İstersin? Aşağıdaki bağlantılara tıklayabilirisin</h2>
+
+    <button onclick="window.location.href='http://localhost:8080'">Müzik</button>
+    <button onclick="window.location.href='http://localhost:9090'">Film</button>
+    <button onclick="window.location.href='http://localhost:7070'">Oyun</button>
+
+</body>
+</html>

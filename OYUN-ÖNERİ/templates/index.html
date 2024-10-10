@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Kategorisi Seçimi</title>
+    <style>
+   body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(244, 244, 249, 0.8); 
+    background-image: url('/static/images/background.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+        .category-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-form h2 {
+            text-align: center;
+        }
+        .category-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .category-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .category-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .category-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <div class="category-form">
+        <h2>Oyun Kategorisi Seçin</h2>
+        <form action="/games" method="POST">
+            <label for="category">Oyun Kategorisi Seç:</label>
+            <select name="category" id="category">
+                <option value="action">Aksiyon</option>
+                <option value="adventure">Macera</option>
+                <option value="rpg">RPG</option>
+                <option value="sports">Spor</option>
+                <option value="strategy">Strateji</option>
+                <option value="simulation">Simülasyon</option>
+                <option value="puzzle">Bulmaca</option>
+            </select>
+            <button type="submit">Oyunları Göster</button>
+        </form>
+    </div>
+
+    <button onclick="window.location.href='http://127.0.0.1:5003/assistant'">GERİ DÖN</button>
+
+
+</body>
+</html>

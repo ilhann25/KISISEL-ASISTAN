@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Önerilen Filmler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Önerilen Filmler</h1>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% else %}
+            <ul>
+                {% for movie in movies %}
+                    <li>
+                        <img src="{{ movie.Poster }}" alt="{{ movie.Title }} Afişi" style="width: 100px; height: auto;"> 
+                        <a href="{{ movie.Link }}" target="_blank">{{ movie.Title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="/">Geri Dön</a>
+    </div>
+</body>
+</html>
