@@ -1,7 +1,8 @@
 # KISISEL-ASISTAN
 Yüz tanıma ve duygu tespitini anlık yaparak kişiyi müzik,film,oyun önerileri alabileceği sistem
+(bunun içine pythonda Open-Cv face_recognition deepface(duygu tespiti için,önce dlipin yüklenmesi gerkiyor) kullandıldı ve ayrıca apılerin kullanımı için requests kütüphanesinin olması gerkiyor.)
 
-Bu Flask uygulaması, gerçek zamanlı yüz tanıma ve duygu tespiti yaparak size kişiselleştirilmiş öneriler sunar. Duygu durumunuza göre sizi bir asistana yönlendirir ve burada oyun, müzik ve film önerileri alınabilir. Müzik önerileri için Spotify API'si gibi çeşitli API'ler entegre edilmiştir.
+Flask uygulaması, gerçek zamanlı yüz tanıma ve duygu tespiti yaparak size kişiselleştirilmiş öneriler sunar. Duygu durumunuza göre sizi bir asistana yönlendirir ve burada oyun, müzik ve film önerileri alınabilir. Müzik önerileri için Spotify API'si  ve diğer özellikler için çeşitli API'ler entegre edilmiştir.
 
 Özellikler
 Gerçek zamanlı yüz tanıma ve duygu tespiti.
